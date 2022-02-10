@@ -1,0 +1,21 @@
+name: mightysteel
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+        with:
+          fetch-depth: 0
+      -uses: action/setup-python@v2
+        with:
+          python-version: 3.10.2
